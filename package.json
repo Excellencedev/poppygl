@@ -10,9 +10,9 @@
     "dist"
   ],
   "scripts": {
-    "start": "cosmos",
-    "build:site": "cosmos-export",
-    "build": "tsup-node ./lib/index.ts --format esm --dts",
+    "start": "node init && cosmos",
+    "build:site": "node init && cosmos-export",
+    "build": "node init && tsup-node ./lib/index.ts --format esm --dts",
     "format": "biome format --write .",
     "format:check": "biome format .",
     "test": "bun test"
@@ -34,7 +34,9 @@
     "typescript": "^5"
   },
   "dependencies": {
+    "dotenv": "^8.2.0",
     "gl-matrix": "^3.4.4",
+    "node-fetch": "^3.3.2",
     "pureimage": "^0.4.18",
     "readable-stream": "^4.7.0"
   }
